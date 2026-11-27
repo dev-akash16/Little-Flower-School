@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Facilities & Infrastructure | Little Flower School, Hajipur</title>
+  <meta name="description" content="Explore state-of-the-art campus facilities at Little Flower School, Kutubpur Kothi, Hajipur: Smart digital classrooms, science labs, computer lab, library, sports ground, safe transport, and 24x7 CCTV.">
+  <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .facility-detailed-card {
+      background: #ffffff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-base);
+      display: flex;
+      flex-direction: column;
+    }
+    .facility-detailed-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
+      border-color: #bae6fd;
+    }
+    .facility-card-media {
+      height: 220px;
+      position: relative;
+      overflow: hidden;
+      background: #0f172a;
+    }
+    .facility-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+    .facility-detailed-card:hover .facility-card-img {
+      transform: scale(1.05);
+    }
+    .facility-card-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(8px);
+      color: #38bdf8;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .facility-card-body {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .facility-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .facility-card-desc {
+      font-size: 0.925rem;
+      color: var(--color-text-muted);
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+    .facility-features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--color-border-light);
+    }
+    .facility-feature-point {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--color-text-main);
+      font-weight: 600;
+    }
+    .facility-feature-point svg {
+      color: var(--color-brand-blue);
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-contact-group">
+        <div class="top-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <span>Mob: <a href="tel:09110959937">091109 59937</a></span>
+        </div>
+        <a href="https://maps.app.goo.gl/UAMLcNpK4eCTVXQU8" target="_blank" rel="noopener" class="top-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span>Kutubpur Kothi, Hajipur, India - 844125</span>
+        </a>
+      </div>
+      <div class="top-quick-actions">
+        <div class="top-admission-pill">
+          <span class="pulse-dot"></span>
+          <span>Admissions 2025-26 Open</span>
+        </div>
+        <a href="https://wa.me/919110959937" target="_blank" rel="noopener" class="top-contact-item" style="color: #4ade80;">
+          <span>WhatsApp Us</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="index.html" class="school-brand">
+        <div class="school-logo-wrap">
+          <img src="assets/images/logo.jpg" alt="Little Flower School Logo" class="school-logo-img">
+        </div>
+        <div class="school-brand-text">
+          <span class="school-name">Little Flower School</span>
+          <span class="school-subtext">Kutubpur Kothi, Hajipur</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="academics.html" class="nav-link">Academics</a>
+        <a href="facilities.html" class="nav-link active">Facilities</a>
+        <a href="admissions.html" class="nav-link">Admissions</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="notices.html" class="nav-link">Notices</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="admissions.html" class="btn btn-primary btn-sm">Enquire Now</a>
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-nav-drawer">
+    <div class="mobile-nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="academics.html" class="nav-link">Academics</a>
+      <a href="facilities.html" class="nav-link active">Facilities</a>
+      <a href="admissions.html" class="nav-link">Admissions</a>
+      <a href="gallery.html" class="nav-link">Photo Gallery</a>
+      <a href="notices.html" class="nav-link">Notice Board</a>
+      <a href="contact.html" class="nav-link">Contact Us</a>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+      <a href="tel:09110959937" class="btn btn-secondary btn-sm" style="width: 100%;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        Call 091109 59937
+      </a>
+      <a href="https://wa.me/919110959937" target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm" style="width: 100%;">
+        Chat on WhatsApp
+      </a>
+    </div>
+  </aside>
+
+  <!-- Page Banner -->
+  <section class="page-hero-banner">
+    <div class="container">
+      <div class="section-badge" style="background: rgba(255,255,255,0.15); color: #7dd3fc; border-color: rgba(255,255,255,0.25);">Infrastructure & Amenities</div>
+      <h1 class="page-hero-title">Campus Facilities & Infrastructure</h1>
+      <div class="page-hero-crumbs">
+        <a href="index.html">Home</a> &gt; <span>Campus Facilities</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview Strip -->
+  <section style="padding: 3.5rem 0 2rem; background: #ffffff;">
+    <div class="container text-center" style="max-width: 860px;">
+      <h2 style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; color: var(--color-primary); margin-bottom: 1rem;">
+        Engineered for Safety, Joyful Exploration & Modern Learning
+      </h2>
+      <p style="font-size: 1.05rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 2rem;">
+        At Little Flower School, Kutubpur Kothi, Hajipur, we believe an exceptional school environment inspires children to achieve their fullest potential. Our campus combines smart educational technology, scientific practical labs, spacious sports grounds, and strict security protocols.
+      </p>
+
+      <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 3rem;">
+        <div style="background: #f8fafc; border: 1px solid var(--color-border); padding: 1rem 1.5rem; border-radius: var(--radius-lg); text-align: center; min-width: 180px;">
+          <div style="font-size: 1.8rem; font-weight: 800; color: #0284c7;">10+</div>
+          <div style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-muted);">Campus Facilities</div>
+        </div>
+        <div style="background: #f8fafc; border: 1px solid var(--color-border); padding: 1rem 1.5rem; border-radius: var(--radius-lg); text-align: center; min-width: 180px;">
+          <div style="font-size: 1.8rem; font-weight: 800; color: #16a34a;">100%</div>
+          <div style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-muted);">CCTV & Safety Covered</div>
+        </div>
+        <div style="background: #f8fafc; border: 1px solid var(--color-border); padding: 1rem 1.5rem; border-radius: var(--radius-lg); text-align: center; min-width: 180px;">
+          <div style="font-size: 1.8rem; font-weight: 800; color: #f59e0b;">Pure RO</div>
+          <div style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-muted);">Drinking Water System</div>
+        </div>
+        <div style="background: #f8fafc; border: 1px solid var(--color-border); padding: 1rem 1.5rem; border-radius: var(--radius-lg); text-align: center; min-width: 180px;">
+          <div style="font-size: 1.8rem; font-weight: 800; color: #0f2b48;">Fleet Vans</div>
+          <div style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-muted);">Safe Hajipur Transport</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Facilities Grid -->
+  <section style="padding: 2rem 0 5rem; background: var(--color-bg-page);">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem;">
+
+        <!-- 1. Smart Digital Classrooms -->
+        <div class="facility-detailed-card">
+          <div class="facility-card-media">
+            <img src="assets/images/campus-corridor.jpg" alt="Smart Classrooms at Little Flower School" class="facility-card-img">
+            <span class="facility-card-badge">Academic Tech</span>
+          </div>
+          <div class="facility-card-body">
+            <h3 class="facility-card-title">
+              <span>💻</span> Smart Digital Classrooms
+            </h3>
+            <p class="facility-card-desc">
+              Classrooms are equipped with interactive audiovisual smart displays, digital projectors, and multimedia educational software. Concepts in science, mathematics, and geography are brought to life through 2D/3D visualizations and engaging animations.
+            </p>
+            <div class="facility-features-list">
+              <div class="facility-feature-point">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Interactive digital syllabus modules for all grades</span>
+              </div>
+              <div class="facility-feature-point">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Ergonomic benches, child-safe furniture & ample natural ventilation</span>
+              </div>
+              <div class="facility-feature-point">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Optimal teacher-to-student ratio for focused personal attention</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Science & Innovation Labs -->
+        <div class="facility-detailed-card">
+          <div class="facility-card-media">
+            <img src="assets/images/student-speech.jpg" alt="Science Learning at Little Flower School" class="facility-card-img">
+            <span class="facility-card-badge">Hands-On STEM</span>
+          </div>
+          <div class="facility-card-body">
+            <h3 class="facility-card-title">
+              <span>🔬</span> Science & Discovery Laboratory
+            </h3>
+            <p class="facility-card-desc">
+              Experiential learning is the cornerstone of scientific mastery. Our laboratory is furnished with practical demonstration kits, optical microscopes, specimen slides, glassware, and physics measurement instruments strictly supervised by experienced science faculty.
+            </p>
+            <div class="facility-features-list">
+              <div class="facility-feature-point">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Physics, Chemistry & Biology apparatus adhering to safety codes</span>
+              </div>
+              <div class="facility-feature-point">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Guided weekly practical sessions for Middle Wing students</span>
+              </div>
+              <div class="facility-feature-point">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Annual Science Exhibition and innovation model making</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Computer & IT Lab -->
+        <div class="facility-detailed-card">
+          <div class="facility-card-media">
+            <img src="assets/images/campus-inauguration.jpg" alt="Computer Education at Little Flower School" class="facility-card-img">
+            <span class="facility-card-badge">Digital Skills</span>
+          </div>
+          <div class="facility-card-body">
+            <h3 class="facility-card-title">
+              <span>🖥️</span> Computer & IT Education Lab
+            </h3>
+            <p class="facility-card-desc">
+              Preparing children for the digital era from early primary school. The air-cooled computer lab features modern desktop systems with high-speed internet, secure firewalls, touch typing software, and foundational coding (Scratch, Python logic, and office productivity tools).
+            </p>
+            <div class="facility-features-list">
+              <div class="facility-feature-point">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>1:1 computer workstation availability during lab periods</span>
+              </div>
+              <div class="facility-feature-point">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Child-safe internet filtering and supervised browsing</span>
+              </div>
+              <div class="facility-feature-point">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Cyber safety awareness and digital citizenship workshops</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Library & Reading Lounge -->
+        <div class="facility-detailed-card">
+          <div class="facility-card-media">
+            <img src="assets/images/faculty-seminar.jpg" alt="School Library and Faculty" class="facility-card-img">
+            <span class="facility-card-badge">Resource Center</span>
+          </div>
+          <div class="facility-card-body">
+            <h3 class="facility-card-title">
+              <span>📚</span> Library & Knowledge Resource Center
+            </h3>
+            <p class="facility-card-desc">
+              A serene haven cultivating the love of reading. Our library houses over 2,500+ curated volumes ranging from classic literature, moral storybooks (Panchatantra, Jataka Tales), children's encyclopedias, to competitive exam foundation series and periodicals.
+            </p>
+            <div class="facility-features-list">
+              <div class="facility-feature-point">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Dedicated weekly library reading hour for every class</span>
+              </div>
+              <div class="facility-feature-point">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Bilingual collections in both Hindi and English</span>
+              </div>
+              <div class="facility-feature-point">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Book borrowing facility to encourage home reading habits</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Outdoor Sports & Play Arena -->
+        <div class="facility-detailed-card">
+          <div class="facility-card-media">
+            <img src="assets/images/morning-assembly.jpg" alt="Sports Ground at Little Flower School" class="facility-card-img">
+            <span class="facility-card-badge">Athletics & Fitness</span>
+          </div>
+          <div class="facility-card-body">
+            <h3 class="facility-card-title">
+              <span>⚽</span> Sports Ground & Play Arena
+            </h3>
+            <p class="facility-card-desc">
+              Physical education is vital for mental vigor and sportsmanship. Our campus grounds support outdoor sports including badminton, cricket practice nets, kho-kho, football, volleyball, yoga, and gymnastics, alongside dedicated play equipment for kindergarten.
+            </p>
+            <div class="facility-features-list">
+              <div class="facility-feature-point">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Dedicated Physical Education (PT) instructors and coaches</span>
+              </div>
+              <div class="facility-feature-point">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Inter-house athletics tournaments and Annual Sports Day</span>
+              </div>
+              <div class="facility-feature-point">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Child-friendly rubberized swings and slides for junior kids</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Safe & Reliable Transport -->
+        <div class="facility-detailed-card">
+          <div class="facility-card-media">
+            <img src="assets/images/cleanliness-drive.jpg" alt="School Transport Fleet Hajipur" class="facility-card-img">
+            <span class="facility-card-badge">Safe Transit</span>
+          </div>
+          <div class="facility-card-body">
+            <h3 class="facility-card-title">
+              <span>🚌</span> Safe & Reliable School Transport
+            </h3>
+            <p class="facility-card-desc">
+              Hassle-free daily commute for students across Hajipur and surrounding localities. Our fleet of verified school vans is driven by background-checked drivers, accompanied by responsible attendants, and adheres to all school vehicle safety norms.
+            </p>
+            <div class="facility-features-list">
+              <div class="facility-feature-point">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Covers Kutubpur, Ramashish Chowk, Anjanpir, Konhara Ghat & nearby routes</span>
+              </div>
+              <div class="facility-feature-point">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Dedicated female helper attendants for junior students</span>
+              </div>
+              <div class="facility-feature-point">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>First-aid kit and emergency protocols inside every vehicle</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Hygienic Campus & RO Drinking Water -->
+        <div class="facility-detailed-card">
+          <div class="facility-card-media">
+            <img src="assets/images/green-drive.jpg" alt="Clean and Green Campus" class="facility-card-img">
+            <span class="facility-card-badge">Health & Hygiene</span>
+          </div>
+          <div class="facility-card-body">
+            <h3 class="facility-card-title">
+              <span>💧</span> Pure RO Water & Sanitized Campus
+            </h3>
+            <p class="facility-card-desc">
+              Child health and sanitation are our topmost daily priority. The campus is equipped with multi-stage Reverse Osmosis (RO) drinking water coolers, regular TDS testing, and clean, gender-segregated sanitization blocks maintained on an hourly cleaning schedule.
+            </p>
+            <div class="facility-features-list">
+              <div class="facility-feature-point">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Multi-stage industrial RO filtration with regular water lab testing</span>
+              </div>
+              <div class="facility-feature-point">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Separate, hygienic washroom complexes for boys and girls</span>
+              </div>
+              <div class="facility-feature-point">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Daily sanitization of high-contact banisters, desks and doors</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. 24x7 CCTV & Campus Security -->
+        <div class="facility-detailed-card">
+          <div class="facility-card-media">
+            <img src="assets/images/campus-corridor.jpg" alt="CCTV Campus Security" class="facility-card-img">
+            <span class="facility-card-badge">Safety & Vigilance</span>
+          </div>
+          <div class="facility-card-body">
+            <h3 class="facility-card-title">
+              <span>🛡️</span> 24x7 CCTV Surveillance & Gated Security
+            </h3>
+            <p class="facility-card-desc">
+              Parents enjoy complete peace of mind when their children are on campus. The entire school boundary, corridors, stairwells, gates, and common gathering areas are under round-the-clock high-definition CCTV monitoring with dedicated security guards.
+            </p>
+            <div class="facility-features-list">
+              <div class="facility-feature-point">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>HD CCTV cameras covering corridors, gates & playground</span>
+              </div>
+              <div class="facility-feature-point">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Strict visitor verification and gate-pass logging system</span>
+              </div>
+              <div class="facility-feature-point">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Authorized guardian pickup identification protocols</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Creative Arts & Cultural Hall -->
+        <div class="facility-detailed-card">
+          <div class="facility-card-media">
+            <img src="assets/images/fancy-dress.jpg" alt="Cultural Arts and Performances" class="facility-card-img">
+            <span class="facility-card-badge">Creative Arts</span>
+          </div>
+          <div class="facility-card-body">
+            <h3 class="facility-card-title">
+              <span>🎭</span> Arts, Music & Cultural Activity Center
+            </h3>
+            <p class="facility-card-desc">
+              Nurturing imagination beyond textbooks. Our cultural hall provides a vibrant stage for public speaking, speech competitions, singing, keyboard, tabla, theater dramatics, classical dance forms, painting, and fancy dress celebrations.
+            </p>
+            <div class="facility-features-list">
+              <div class="facility-feature-point">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Acoustic multi-purpose hall with sound system and stage</span>
+              </div>
+              <div class="facility-feature-point">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Guidance in vocal music, instruments, and classical dance</span>
+              </div>
+              <div class="facility-feature-point">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Regular celebrations for Independence Day, Republic Day & Annual Day</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Campus Visit CTA Banner with Map Location -->
+  <section style="padding: 5rem 0; background: linear-gradient(135deg, #0f2b48 0%, #1e3a8a 100%); color: #ffffff;">
+    <div class="container text-center" style="max-width: 820px;">
+      <div class="section-badge" style="background: rgba(255,255,255,0.15); color: #7dd3fc; border-color: rgba(255,255,255,0.25); margin: 0 auto 1.5rem;">
+        Experience Our Campus
+      </div>
+      <h2 style="font-family: var(--font-heading); font-size: 2.3rem; font-weight: 800; color: #ffffff; margin-bottom: 1.25rem;">
+        Visit Little Flower School in Kutubpur Kothi, Hajipur
+      </h2>
+      <p style="font-size: 1.1rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 2.25rem;">
+        We welcome parents to take an in-person guided tour of our classrooms, science lab, library, and play arena. Our admissions counselors will be delighted to answer your questions.
+      </p>
+
+      <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem;">
+        <a href="https://maps.app.goo.gl/UAMLcNpK4eCTVXQU8" target="_blank" rel="noopener" class="btn btn-primary btn-lg" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          Open Location in Google Maps
+        </a>
+        <a href="admissions.html" class="btn btn-secondary btn-lg" style="background: #ffffff; color: #0f2b48; border-color: #ffffff;">
+          Apply for Admission
+        </a>
+        <a href="tel:09110959937" class="btn btn-secondary btn-lg" style="background: transparent; color: #ffffff; border-color: rgba(255,255,255,0.4);">
+          📞 Call 091109 59937
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="school-brand">
+          <div class="school-logo-wrap">
+            <img src="assets/images/logo.jpg" alt="Little Flower School Logo" class="school-logo-img">
+          </div>
+          <div class="school-brand-text">
+            <span class="school-name">Little Flower School</span>
+            <span class="school-subtext">Hajipur, Bihar</span>
+          </div>
+        </a>
+        <p class="footer-about-text">
+          "Learning Today for Leading Tomorrow" — Dedicated to providing clean, value-based, and forward-looking education to the children of Hajipur and Vaishali district.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Quick Navigation</h4>
+        <div class="footer-links-list">
+          <a href="index.html" class="footer-link">&rarr; Home</a>
+          <a href="about.html" class="footer-link">&rarr; About School</a>
+          <a href="academics.html" class="footer-link">&rarr; Academic Curriculum</a>
+          <a href="facilities.html" class="footer-link">&rarr; Campus Facilities</a>
+          <a href="admissions.html" class="footer-link">&rarr; Admissions 2025-26</a>
+          <a href="gallery.html" class="footer-link">&rarr; Photo Gallery</a>
+          <a href="notices.html" class="footer-link">&rarr; Notice Board</a>
+          <a href="contact.html" class="footer-link">&rarr; Contact Us</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Campus Features</h4>
+        <div class="footer-links-list">
+          <span class="footer-link">&bull; Smart Digital Classrooms</span>
+          <span class="footer-link">&bull; Science & Computer Labs</span>
+          <span class="footer-link">&bull; Rich Library & Reading Lounge</span>
+          <span class="footer-link">&bull; Outdoor Sports & Athletics Ground</span>
+          <span class="footer-link">&bull; Dedicated Fleet Vans for Hajipur</span>
+          <span class="footer-link">&bull; 24x7 CCTV & Safe Campus</span>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">School Campus Info</h4>
+        <div class="footer-contact-list">
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <div>
+              <span>Kutubpur Kothi, Hajipur, Vaishali, Bihar - 844125</span><br>
+              <a href="https://maps.app.goo.gl/UAMLcNpK4eCTVXQU8" target="_blank" rel="noopener" style="color: #38bdf8; font-size: 0.825rem; display: inline-flex; align-items: center; gap: 0.35rem; margin-top: 0.25rem;">
+                <span>📍 View on Google Maps</span> &rarr;
+              </a>
+            </div>
+          </div>
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span><a href="tel:09110959937" style="color: #ffffff; font-weight: 700;">091109 59937</a></span>
+          </div>
+          <div class="footer-contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>Mon - Sat: 8:00 AM - 2:00 PM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="copyright-text">&copy; 2025 Little Flower School, Hajipur. All Rights Reserved.</p>
+        <div class="footer-legal-links">
+          <span>Affiliated Pattern Curriculum</span>
+          <span>&bull;</span>
+          <span>Nursery to Class VIII</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Docked Mobile Bottom Action Bar -->
+  <div class="mobile-bottom-dock">
+    <a href="tel:09110959937" class="dock-btn dock-btn-call">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      <span>Call School</span>
+    </a>
+    <a href="https://wa.me/919110959937?text=Hello%20Little%20Flower%20School,%20I%20want%20to%20enquire%20about%20campus%20facilities%20and%20admissions." target="_blank" rel="noopener" class="dock-btn dock-btn-whatsapp">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+      <span>WhatsApp</span>
+    </a>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
