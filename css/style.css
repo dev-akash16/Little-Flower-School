@@ -1985,8 +1985,9 @@ textarea.form-control {
 /* ==========================================================================
    MOBILE BOTTOM BAR (Docked for Phone Screens)
    ========================================================================== */
-.mobile-bottom-bar {
-  display: none;
+.mobile-bottom-bar,
+.mobile-bottom-dock {
+  display: none !important;
 }
 
 @media (max-width: 768px) {
