@@ -1,0 +1,593 @@
+import React from "react";
+import { motion, useReducedMotion } from "motion/react";
+
+/**
+ * Little Flower School - Animated Hero & Navigation Component
+ * Implemented from Figma Frame: Desktop & Mobile Home Screen
+ * Supports 'prefers-reduced-motion' for accessibility.
+ */
+
+export default function LittleFlowerSchoolMotion({
+  onEnquireClick = () => {},
+  onCallClick = () => {},
+  onWhatsAppClick = () => {},
+}) {
+  const shouldReduceMotion = useReducedMotion();
+
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: shouldReduceMotion ? 0 : 0.15,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemFadeUp = {
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    },
+  };
+
+  const badgePulse = {
+    scale: shouldReduceMotion ? 1 : [1, 1.05, 1],
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  };
+
+  return (
+    <div className="lfs-app-wrapper" data-node-id="1:17" style={styles.page}>
+      {/* 1. Top Utility Bar */}
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+        style={styles.topBar}
+        data-node-id="1:18"
+      >
+        <div style={styles.topContent}>
+          <div style={styles.topContact}>
+            <span>📞 <strong>Mob:</strong> 091109 59937</span>
+            <span>📍 Kutubpur Kothi, Hajipur, Bihar 844125</span>
+            <span>🕒 Office: 8:00 AM – 2:00 PM</span>
+          </div>
+          <motion.div
+            animate={badgePulse}
+            style={styles.topBadge}
+          >
+            <span style={styles.pulseDot} />
+            ADMISSIONS 2027–2028 OPEN
+          </motion.div>
+        </div>
+      </motion.div>
+
+      {/* 2. Main Navigation Bar */}
+      <motion.header
+        initial={{ opacity: 0, y: -15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        style={styles.navBar}
+        data-node-id="1:20"
+      >
+        <div style={styles.navContent}>
+          <div style={styles.brand}>
+            <motion.div
+              whileHover={{ rotate: 10, scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              style={styles.logoWrap}
+            >
+              <img
+                src="assets/images/logo.jpg"
+                alt="Little Flower School Emblem"
+                style={styles.logoImg}
+              />
+            </motion.div>
+            <div style={styles.brandText}>
+              <span style={styles.schoolTitle}>Little Flower School</span>
+              <span style={styles.schoolSubtitle}>KUTUBPUR KOTHI, HAJIPUR</span>
+            </div>
+          </div>
+
+          <nav style={styles.navLinks} data-node-id="1:22">
+            {[
+              { name: "Home", href: "index.html" },
+              { name: "About Us", href: "about.html" },
+              { name: "Academics", href: "academics.html" },
+              { name: "Facilities", href: "facilities.html" },
+              { name: "Admissions", href: "admissions.html" },
+              { name: "Gallery", href: "gallery.html" },
+              { name: "Notice Board", href: "notices.html" },
+              { name: "Contact", href: "contact.html" }
+            ].map((item, idx) => (
+              <motion.a
+                key={item.name}
+                href={item.href}
+                whileHover={{ color: "#0284c7", y: -2 }}
+                transition={{ duration: 0.2 }}
+                style={idx === 0 ? styles.activeLink : styles.navLink}
+              >
+                {item.name}
+              </motion.a>
+            ))}
+          </nav>
+
+          <motion.button
+            whileHover={{ scale: 1.04, boxShadow: "0 6px 20px rgba(2, 132, 199, 0.4)" }}
+            whileTap={{ scale: 0.96 }}
+            onClick={onEnquireClick}
+            style={styles.primaryBtn}
+          >
+            Enquire Now
+          </motion.button>
+        </div>
+      </motion.header>
+
+      {/* 3. Hero Section */}
+      <section style={styles.heroSection}>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          style={styles.heroGrid}
+        >
+          {/* Left Column: Hero Content */}
+          <div style={styles.heroLeft}>
+            <motion.div variants={itemFadeUp} style={styles.heroPill}>
+              <span style={styles.pillTag}>ADMISSIONS OPEN</span>
+              <span style={styles.pillText}>Session 2027–2028 • Nursery to Class VIII</span>
+            </motion.div>
+
+            <motion.div
+              variants={itemFadeUp}
+              style={styles.mottoTag}
+              data-node-id="1:25"
+            >
+              ★ LEARNING TODAY FOR LEADING TOMORROW ★
+            </motion.div>
+
+            <motion.h1
+              variants={itemFadeUp}
+              style={styles.heroHeading}
+              data-node-id="1:24"
+            >
+              Inspiring Young Minds in a{" "}
+              <span style={styles.headingGradient}>Nurturing Environment</span>
+            </motion.h1>
+
+            <motion.p
+              variants={itemFadeUp}
+              style={styles.heroDescription}
+              data-node-id="1:26"
+            >
+              Welcome to <strong>Little Flower School</strong>, Kutubpur Kothi, Hajipur. We offer a balanced blend of academic excellence, moral grounding, values, and co-curricular development to help your child blossom into a confident future leader.
+            </motion.p>
+
+            <motion.div variants={itemFadeUp} style={styles.heroActions}>
+              <motion.button
+                whileHover={{ scale: 1.03, boxShadow: "0 8px 24px rgba(2, 132, 199, 0.45)" }}
+                whileTap={{ scale: 0.97 }}
+                onClick={onEnquireClick}
+                style={styles.applyBtn}
+              >
+                Apply for Admission 2027–2028
+              </motion.button>
+
+              <motion.a
+                href="tel:09110959937"
+                whileHover={{ scale: 1.03, backgroundColor: "#f1f5f9" }}
+                whileTap={{ scale: 0.97 }}
+                onClick={onCallClick}
+                style={styles.callBtn}
+              >
+                📞 Call 091109 59937
+              </motion.a>
+            </motion.div>
+
+            {/* Checkmark Features */}
+            <motion.div variants={itemFadeUp} style={styles.featureRow}>
+              <span>✔ Holistic Child Care</span>
+              <span>✔ Safe Bus Transport</span>
+              <span>✔ Eco-Friendly Campus</span>
+            </motion.div>
+          </div>
+
+          {/* Right Column: Hero Visual Card */}
+          <motion.div
+            variants={itemFadeUp}
+            whileHover={shouldReduceMotion ? {} : { y: -6 }}
+            transition={{ duration: 0.3 }}
+            style={styles.heroCard}
+            data-node-id="1:23"
+          >
+            <div style={styles.imageWrap}>
+              <img
+                src="assets/images/hero-students.jpg"
+                alt="Joyful Little Flower School Students"
+                style={styles.heroImg}
+              />
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.5, duration: 0.4 }}
+                style={styles.statBadge}
+              >
+                <div style={styles.statIcon}>★</div>
+                <div>
+                  <div style={styles.statNumber}>15:1</div>
+                  <div style={styles.statLabel}>Student-Teacher Ratio</div>
+                </div>
+              </motion.div>
+            </div>
+
+            <div style={styles.cardFooter}>
+              <div>
+                <h4 style={styles.cardTitle}>Joyful & Disciplined Learning</h4>
+                <p style={styles.cardSubtitle}>Little Flower School, Kutubpur Kothi, Hajipur</p>
+              </div>
+              <motion.a
+                href="#gallery"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                style={styles.cardActionBtn}
+              >
+                View Photos
+              </motion.a>
+            </div>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* 4. Docked Mobile Bottom Bar */}
+      <div style={styles.mobileDockedBar}>
+        <motion.a
+          href="tel:09110959937"
+          whileTap={{ scale: 0.95 }}
+          style={styles.dockedCallBtn}
+        >
+          📞 Call School
+        </motion.a>
+        <motion.a
+          href="https://wa.me/919110959937"
+          target="_blank"
+          rel="noopener"
+          whileTap={{ scale: 0.95 }}
+          style={styles.dockedWaBtn}
+        >
+          💬 WhatsApp
+        </motion.a>
+      </div>
+    </div>
+  );
+}
+
+// Inline responsive styles
+const styles = {
+  page: {
+    fontFamily: "'Plus Jakarta Sans', system-ui, -apple-system, sans-serif",
+    backgroundColor: "#f8fafc",
+    color: "#0f172a",
+    minHeight: "100vh",
+    width: "100%",
+    overflowX: "hidden",
+  },
+  topBar: {
+    backgroundColor: "#0a2540",
+    color: "#e2e8f0",
+    fontSize: "0.825rem",
+    padding: "0.5rem 1.5rem",
+    borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
+  },
+  topContent: {
+    maxWidth: "1280px",
+    margin: "0 auto",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexWrap: "wrap",
+    gap: "0.75rem",
+  },
+  topContact: {
+    display: "flex",
+    gap: "1.5rem",
+    alignItems: "center",
+    flexWrap: "wrap",
+  },
+  topBadge: {
+    display: "inline-flex",
+    alignItems: "center",
+    gap: "0.45rem",
+    background: "rgba(225, 29, 72, 0.18)",
+    color: "#fda4af",
+    border: "1px solid rgba(225, 29, 72, 0.35)",
+    padding: "0.2rem 0.75rem",
+    borderRadius: "9999px",
+    fontSize: "0.75rem",
+    fontWeight: 700,
+  },
+  pulseDot: {
+    width: "7px",
+    height: "7px",
+    borderRadius: "50%",
+    backgroundColor: "#e11d48",
+  },
+  navBar: {
+    position: "sticky",
+    top: 0,
+    zIndex: 100,
+    backgroundColor: "rgba(255, 255, 255, 0.98)",
+    backdropFilter: "blur(12px)",
+    borderBottom: "1px solid #e2e8f0",
+    padding: "0.75rem 1.5rem",
+    boxShadow: "0 2px 10px rgba(0, 0, 0, 0.04)",
+  },
+  navContent: {
+    maxWidth: "1280px",
+    margin: "0 auto",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  brand: {
+    display: "flex",
+    alignItems: "center",
+    gap: "0.85rem",
+    textDecoration: "none",
+  },
+  logoWrap: {
+    width: "48px",
+    height: "48px",
+    borderRadius: "50%",
+    padding: "2px",
+    background: "linear-gradient(135deg, #00a3e0, #0284c7)",
+    boxShadow: "0 2px 8px rgba(2, 132, 199, 0.25)",
+  },
+  logoImg: {
+    width: "100%",
+    height: "100%",
+    borderRadius: "50%",
+    objectFit: "cover",
+  },
+  brandText: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  schoolTitle: {
+    fontSize: "1.25rem",
+    fontWeight: 800,
+    color: "#0a2540",
+    letterSpacing: "-0.02em",
+  },
+  schoolSubtitle: {
+    fontSize: "0.7rem",
+    fontWeight: 700,
+    color: "#0284c7",
+    letterSpacing: "0.05em",
+  },
+  navLinks: {
+    display: "flex",
+    gap: "1.5rem",
+    alignItems: "center",
+  },
+  navLink: {
+    color: "#475569",
+    fontWeight: 600,
+    fontSize: "0.925rem",
+    textDecoration: "none",
+    transition: "color 0.2s",
+  },
+  activeLink: {
+    color: "#0284c7",
+    fontWeight: 700,
+    fontSize: "0.925rem",
+    textDecoration: "none",
+    borderBottom: "2px solid #0284c7",
+    paddingBottom: "2px",
+  },
+  primaryBtn: {
+    background: "linear-gradient(135deg, #0284c7, #00a3e0)",
+    color: "#ffffff",
+    border: "none",
+    borderRadius: "9999px",
+    padding: "0.6rem 1.4rem",
+    fontSize: "0.925rem",
+    fontWeight: 700,
+    cursor: "pointer",
+  },
+  heroSection: {
+    padding: "4rem 1.5rem 5rem",
+    maxWidth: "1280px",
+    margin: "0 auto",
+  },
+  heroGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+    gap: "3.5rem",
+    alignItems: "center",
+  },
+  heroLeft: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "1rem",
+  },
+  heroPill: {
+    display: "inline-flex",
+    alignItems: "center",
+    gap: "0.6rem",
+    backgroundColor: "#ffffff",
+    border: "1px solid #bae6fd",
+    padding: "0.35rem 0.85rem",
+    borderRadius: "9999px",
+    width: "fit-content",
+    boxShadow: "0 1px 3px rgba(0, 0, 0, 0.05)",
+  },
+  pillTag: {
+    backgroundColor: "#0284c7",
+    color: "#ffffff",
+    padding: "0.15rem 0.55rem",
+    borderRadius: "9999px",
+    fontSize: "0.725rem",
+    fontWeight: 700,
+  },
+  pillText: {
+    fontSize: "0.825rem",
+    fontWeight: 600,
+    color: "#0a2540",
+  },
+  mottoTag: {
+    fontSize: "0.95rem",
+    fontWeight: 700,
+    color: "#e11d48",
+    letterSpacing: "0.04em",
+  },
+  heroHeading: {
+    fontSize: "clamp(2rem, 4vw, 3.25rem)",
+    fontWeight: 800,
+    color: "#0a2540",
+    lineHeight: 1.15,
+    margin: 0,
+    letterSpacing: "-0.03em",
+  },
+  headingGradient: {
+    background: "linear-gradient(135deg, #0284c7, #00a3e0)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+  },
+  heroDescription: {
+    fontSize: "1.05rem",
+    color: "#475569",
+    lineHeight: 1.65,
+    margin: "0.5rem 0 1rem",
+  },
+  heroActions: {
+    display: "flex",
+    gap: "1rem",
+    flexWrap: "wrap",
+    marginBottom: "1rem",
+  },
+  applyBtn: {
+    background: "linear-gradient(135deg, #0284c7, #00a3e0)",
+    color: "#ffffff",
+    border: "none",
+    borderRadius: "9999px",
+    padding: "0.9rem 1.8rem",
+    fontSize: "1rem",
+    fontWeight: 700,
+    cursor: "pointer",
+  },
+  callBtn: {
+    backgroundColor: "#ffffff",
+    color: "#0a2540",
+    border: "1.5px solid #cbd5e1",
+    borderRadius: "9999px",
+    padding: "0.9rem 1.6rem",
+    fontSize: "1rem",
+    fontWeight: 700,
+    textDecoration: "none",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  featureRow: {
+    display: "flex",
+    gap: "1.5rem",
+    fontSize: "0.875rem",
+    color: "#0a2540",
+    fontWeight: 600,
+    flexWrap: "wrap",
+    borderTop: "1px solid #e2e8f0",
+    paddingTop: "1.25rem",
+  },
+  heroCard: {
+    backgroundColor: "#ffffff",
+    borderRadius: "24px",
+    overflow: "hidden",
+    boxShadow: "0 20px 45px rgba(10, 37, 64, 0.12)",
+    border: "3px solid #ffffff",
+  },
+  imageWrap: {
+    position: "relative",
+    width: "100%",
+    height: "360px",
+  },
+  heroImg: {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+  },
+  statBadge: {
+    position: "absolute",
+    top: "1rem",
+    right: "1rem",
+    backgroundColor: "#ffffff",
+    padding: "0.6rem 1rem",
+    borderRadius: "16px",
+    boxShadow: "0 8px 20px rgba(0, 0, 0, 0.12)",
+    display: "flex",
+    alignItems: "center",
+    gap: "0.6rem",
+  },
+  statIcon: {
+    width: "34px",
+    height: "34px",
+    borderRadius: "50%",
+    backgroundColor: "#e0f2fe",
+    color: "#0284c7",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontWeight: 800,
+  },
+  statNumber: {
+    fontSize: "1.1rem",
+    fontWeight: 800,
+    color: "#0a2540",
+    lineHeight: 1,
+  },
+  statLabel: {
+    fontSize: "0.725rem",
+    color: "#64748b",
+    fontWeight: 600,
+  },
+  cardFooter: {
+    padding: "1.25rem 1.5rem",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    borderTop: "1px solid #f1f5f9",
+  },
+  cardTitle: {
+    margin: 0,
+    fontSize: "1rem",
+    fontWeight: 700,
+    color: "#0a2540",
+  },
+  cardSubtitle: {
+    margin: 0,
+    fontSize: "0.8rem",
+    color: "#64748b",
+  },
+  cardActionBtn: {
+    backgroundColor: "#0284c7",
+    color: "#ffffff",
+    padding: "0.45rem 1rem",
+    borderRadius: "9999px",
+    fontSize: "0.825rem",
+    fontWeight: 700,
+    textDecoration: "none",
+  },
+  mobileDockedBar: {
+    display: "none", // Visible via CSS media query on mobile
+  },
+};
